@@ -11,7 +11,22 @@
              HorizontalAlignment="Left" Margin="10,8,0,0"
              VerticalAlignment="Top" Height="46" Width="340" FontSize="24"/>
         <DataGrid x:Name="dgMain" HorizontalAlignment="Left"
-                  Height="263" Margin="16,173,0,0" VerticalAlignment="Top" Width="642" />
+                  Height="263" Margin="16,173,0,0" VerticalAlignment="Top" Width="642" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding 
+Path=PositionID}" Header="ID товара"/>
+                <DataGridTextColumn Binding="{Binding 
+Path=PositionName}" Header="Название товара"/>
+                <DataGridTextColumn Binding="{Binding 
+Path=PositionType}" Header="Тип товара"/>
+                <DataGridTextColumn Binding="{Binding 
+Path=PositionValue}" Header="Количество товара"/>
+                <DataGridTextColumn Binding="{Binding 
+Path=PositionPrice}" Header="Цена за товар"/>
+                <DataGridTextColumn Binding="{Binding 
+Path=PriceCurrency}" Header="Цена в валюте"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Label Content="Котировки" HorizontalAlignment="Left"
                Margin="677,206,0,0" VerticalAlignment="Top" Height="37" Width="136" FontSize="18"/>
         <Button x:Name="bQuotes" Content="Получить котировки"
@@ -20,11 +35,12 @@
         <Button x:Name="bAnalys" Content="Провести анализ"
         HorizontalAlignment="Left" Height="38" Margin="677,119,0,0"
         VerticalAlignment="Top" Width="136" />
-        <Slider x:Name="sMarkup" HorizontalAlignment="Left"
-                Margin="248,129,0,0" VerticalAlignment="Top" Width="202"/>
         <Label x:Name="lMarkup" Content="100%"
-               HorizontalAlignment="Left" Margin="450,124,0,0"
-               VerticalAlignment="Top" />
+       HorizontalAlignment="Left" Margin="450,124,0,0"
+       VerticalAlignment="Top" />
+        <Slider x:Name="sMarkup" HorizontalAlignment="Left"
+                Margin="248,129,0,0" VerticalAlignment="Top" Width="202" Minimum="100" Maximum="200" SelectionStart="100" 
+SelectionEnd="200" IsSelectionRangeEnabled="True" ValueChanged="sMarkup_ValueChanged"/>
         <Button x:Name="bMarkup" Content="Установить наценку"
                 HorizontalAlignment="Left" Margin="513,119,0,0"
                 VerticalAlignment="Top" Height="38" Width="145" />
